@@ -153,7 +153,7 @@ def most_common_artist(songs: List[Song]) -> Tuple[str, int]:
     items = sorted(counts.items(), key=lambda item: item[1], reverse=True)
     return items[0]
 
-
+#@ Problem
 def search_songs(
     songs: List[Song],
     query: str,
@@ -168,7 +168,7 @@ def search_songs(
 
     for song in songs:
         value = str(song.get(field, "")).lower()
-        if value and value in q:
+        if value and q in value :
             filtered.append(song)
 
     return filtered
