@@ -150,8 +150,8 @@ def most_common_artist(songs: List[Song]) -> Tuple[str, int]:
     if not counts:
         return "", 0
 
-    items = sorted(counts.items(), key=lambda item: item[1], reverse=True)
-    return items[0]
+    most_artist = max(counts, key=counts.get)
+    return most_artist, counts[most_artist]
 
 #@ Problem
 def search_songs(
